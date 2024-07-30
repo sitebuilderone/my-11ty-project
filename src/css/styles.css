@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles */
+nav ul {
+    @apply flex justify-center space-x-4 p-4 bg-gray-200;
+}
+
+nav li {
+    @apply text-blue-600 hover:text-blue-800;
+}
+
+nav li.active {
+    @apply font-bold;
+}

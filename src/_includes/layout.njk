@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My 11ty Project</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav>
+            <ul class="flex justify-center space-x-4 p-4">
+            {%- for entry in collections.all | eleventyNavigation %}
+                <li{% if entry.url == page.url %} class="font-bold"{% endif %}>
+                    <a href="{{ entry.url }}" class="text-blue-600 hover:text-blue-800">{{ entry.title }}</a>
+                </li>
+            {%- endfor %}
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto mt-8">
+        {{ content | safe }}
+    </main>
+</body>
+</html>
